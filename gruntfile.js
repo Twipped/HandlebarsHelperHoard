@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 		},
 
 		nodeunit: {
-			all: ['tests/*.js', '!tests/testBuilder.js'],
+			all: ['tests/**/*.js', '!tests/testBuilder.js'],
 			options: {
 				reporter: 'default'
 			}
