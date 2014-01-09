@@ -23,7 +23,7 @@ exports.split = function (Handlebars, utils) {
 		if (!options.fn) {
 			return results;
 		} else {
-			var data = utils.createFrame(options.data);
+			var data = Handlebars.createFrame(options.data);
 			return results.map(function (result, i) {
 				data.index = i;
 				data.first = (i === 0);

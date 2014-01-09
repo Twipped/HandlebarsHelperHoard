@@ -23,7 +23,7 @@ exports.join = function (Handlebars, utils) {
 		}
 
 		if (options.fn) {
-			var data = utils.createFrame(options.data);
+			var data = Handlebars.createFrame(options.data);
 			array = array.map(function (result, i) {
 				data.index = i;
 				data.first = (i === 0);

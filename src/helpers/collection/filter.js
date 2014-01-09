@@ -39,7 +39,7 @@ exports.filter = function (Handlebars, utils) {
 
 
 		if(results && results.length > 0) {
-			var data = utils.createFrame(options.data);
+			var data = Handlebars.createFrame(options.data);
 			return results.map(function (result, i) {
 				data.index = i;
 				data.first = (i === 0);

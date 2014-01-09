@@ -29,7 +29,7 @@ exports.slice = function (Handlebars, utils) {
 			return results;
 		} else {
 			if (results.length) {
-				var data = utils.createFrame(options.data);
+				var data = Handlebars.createFrame(options.data);
 				return results.map(function (result, i) {
 					data.index = i;
 					data.first = (i === 0);

@@ -39,11 +39,6 @@ hhn.utils = {
 			}
 		}
 		return object;
-	},
-
-	createFrame: function (context, closure) {
-		var o = Object.create(context || {});
-		if (closure) hhn.utils.extend(o, closure);
-		return o;
 	}
+	
 };
