@@ -1,35 +1,6 @@
 
 hhn.utils = {
 
-	//path that all readFile requests will be relative to
-	_filesRelativeTo: !!process && !!process.cwd && process.cwd() || '',
-	_fileCache: {},
-
-	readFile: function (src) {
-		if (!!process && !!process.cwd) {
-			// we're probably running inside Node
-			
-			var grunt = require('grunt');
-
-			return grunt.file.expand({cwd: hhn.utils._filesRelativeTo}, src).map(function (path) {
-				return grunt.file.read(path);
-			}).join(grunt.util.normalizelf(grunt.util.linefeed));
-
-		} else {
-			// we're probably running in a browser
-			
-			var content = '';
-			if (Array.isArray(src)) {
-				content = src.map(function (d) { return hhn.utils._fileCache[d] || '';}).join('/n');
-			} else {
-				content = hhn.utils._fileCache[src] || '';
-			}
-			return content;
-		}
-	},
-
-
-
 	/**
 	 * Flattens a nested array into a single level array
 	 * @private
