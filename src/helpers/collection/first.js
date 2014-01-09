@@ -7,7 +7,7 @@
  * @param  {[type]} count
  * @return {[type]}
  */
-exports.first = function (Handlebars, utils) {
+exports.first = function (Handlebars) {
 	return function (array, count, options) {
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "first" needs 2 parameters');

@@ -1,6 +1,6 @@
 
 
-exports.filter = function (Handlebars, utils) {
+exports.filter = function (Handlebars) {
 	return function(input, value, property, options) {
 
 		options = arguments[arguments.length - 1];

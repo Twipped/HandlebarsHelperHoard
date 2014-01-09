@@ -6,7 +6,7 @@
  * @param  {[type]} separator [description]
  * @return {[type]}           [description]
  */
-exports.join = function (Handlebars, utils) {
+exports.join = function (Handlebars) {
 	return function (array, separator, options) {
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "join" needs 2 parameters');

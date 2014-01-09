@@ -6,7 +6,7 @@
  * @param  {number} count
  * @return {Array}
  */
-exports.before = function (Handlebars, utils) {
+exports.before = function (Handlebars) {
 	return function (array, count, options) {
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "before" needs 2 parameters');

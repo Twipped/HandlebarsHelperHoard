@@ -1,5 +1,5 @@
 
-exports.keys = function (Handlebars, utils) {
+exports.keys = function (Handlebars) {
 	return function (array, options) {
 		if (!Array.isArray(array) && typeof array === 'object') {
 			array = Object.keys(array);

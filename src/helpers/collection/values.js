@@ -1,5 +1,5 @@
 
-exports.values = function (Handlebars, utils) {
+exports.values = function (Handlebars) {
 	return function (array, options) {
 		if (!Array.isArray(array) && typeof array === 'object') {
 			array = Object.keys(array).map(function (k) { return array[k]; });

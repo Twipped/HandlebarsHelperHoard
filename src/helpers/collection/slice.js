@@ -7,7 +7,7 @@
  * @param  {number} count
  * @return {Array}
  */
-exports.slice = function (Handlebars, utils) {
+exports.slice = function (Handlebars) {
 	return function (array, start, count, options) {
 		options = arguments[arguments.length - 1];
 

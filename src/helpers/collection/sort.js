@@ -1,5 +1,5 @@
 
-exports.sort = function (Handlebars, utils) {
+exports.sort = function (Handlebars) {
 	return function (array, field, options) {
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "sort" needs 1 parameter');

@@ -5,7 +5,7 @@
  * @param  {[type]} count [description]
  * @return {[type]}       [description]
  */
-exports.last = function (Handlebars, utils) {
+exports.last = function (Handlebars) {
 	return function (array, count, options) {
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "last" needs 2 parameters');

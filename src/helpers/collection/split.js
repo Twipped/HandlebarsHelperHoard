@@ -6,7 +6,7 @@
  * @param  {string} str
  * @return {Array}
  */
-exports.split = function (Handlebars, utils) {
+exports.split = function (Handlebars) {
 	return function (str, delimiter, options) {
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "split" needs at least 1 parameter');

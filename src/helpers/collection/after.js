@@ -5,7 +5,7 @@
  * @param  {Number} count Number of items to exclude
  * @return {Array}        Array excluding the number of items specified
  */
-exports.after = function (Handlebars, utils) {
+exports.after = function (Handlebars) {
 	return function (array, count, options) {
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "after" needs 2 parameters');
