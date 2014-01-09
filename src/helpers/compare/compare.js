@@ -5,8 +5,9 @@ exports.compare = function () {
 			throw new Error('Handlebars Helper "compare" needs 2 parameters');
 		}
 
-		if (options === undefined) {
-			options = right;
+		options = arguments[arguments.length - 1];
+
+		if (arguments.length === 3) {
 			right = operator;
 			operator = '===';
 		}
