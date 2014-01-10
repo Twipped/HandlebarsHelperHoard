@@ -16,7 +16,7 @@ hhn.load = function () {
 	}
 
 	for (;i < c; i++) {
-		helper = hhn.helpers[args[i]](Handlebars);
+		helper = hhn.helpers[args[i]].call(context, Handlebars);
 		Handlebars.registerHelper(args[i], helper);
 	}
 };
