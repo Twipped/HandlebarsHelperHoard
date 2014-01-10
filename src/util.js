@@ -11,15 +11,13 @@ hhn.utils = {
 	flatten: function (input) {
 		var result = [];
 
-		function descend(level) {
+		(function descend(level) {
 			if (Array.isArray(level)) {
 				level.forEach(descend);
 			} else {
 				result.push(level);
 			}
-		}
-
-		descend(input);
+		})(input);
 
 		return result;
 	},
