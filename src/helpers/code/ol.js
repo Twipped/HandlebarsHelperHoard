@@ -2,11 +2,11 @@
 
 exports.ol = function (Handlebars) {
 	return function (input, options) {
+		options = arguments[arguments.length - 1];
+
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "ol" needs 1 parameter');
 		}
-
-		options = arguments[arguments.length - 1];
 
 		var stack = ['<ol'];
 
@@ -24,7 +24,7 @@ exports.ol = function (Handlebars) {
 
 		if (!options.fn) {
 			input.forEach(function (item, i) {
-				stack.push('<li>' + item + '</li>');
+				stack.push('<li>' + Handlebars.Utils.escapeExpression(item) + '</li>');
 			});
 		} else {
 			if (input.length) {
@@ -42,5 +42,6 @@ exports.ol = function (Handlebars) {
 
 		stack.push('</ol>');
 
+		return new Handlebars.SafeString(stack.join(''));
 	};
 };

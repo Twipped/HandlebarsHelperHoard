@@ -15,10 +15,10 @@ exports.script = function (Handlebars) {
 			}
 		}
 
-		if (!Array.isArray(input)) {
+		if (Array.isArray(input)) {
 			return new Handlebars.SafeString(input.map(makeLink).join('\n'));
 		} else {
-			new Handlebars.SafeString(makeLink(input));
+			return new Handlebars.SafeString(makeLink(input));
 		}
 
 	};

@@ -24,7 +24,7 @@ exports.ul = function (Handlebars) {
 
 		if (!options.fn) {
 			input.forEach(function (item, i) {
-				stack.push('<li>' + item + '</li>');
+				stack.push('<li>' + Handlebars.Utils.escapeExpression(item) + '</li>');
 			});
 		} else {
 			if (input.length) {
@@ -42,5 +42,6 @@ exports.ul = function (Handlebars) {
 
 		stack.push('</ul>');
 
+		return new Handlebars.SafeString(stack.join(''));
 	};
 };
