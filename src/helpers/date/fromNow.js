@@ -1,7 +1,11 @@
 
 exports.fromNow = function () {
-	var moment = require && require('moment') || this.moment;
 	return function (input, options) {
+		var moment = require && require('moment') || this.moment;
+		if (!moment) {
+			throw new Error('Handlebars Helper "date" requires that the Moment.js library be loaded before using in a template.');
+		}
+
 		options = arguments[arguments.length - 1];
 
 		if (arguments.length === 1) {
@@ -11,11 +15,7 @@ exports.fromNow = function () {
 		}
 
 		if (!input.isValid()) {
-			if (options.inverse) {
-				return options.inverse(this);
-			} else {
-				return '';
-			}
+			return '';
 		}
 
 		return input.fromNow();
