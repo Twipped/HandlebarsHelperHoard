@@ -1,5 +1,5 @@
 
-exports.stringify = function () {
+exports.stringify = function (Handlebars) {
 	return function (input, pretty, options) {
 
 		if (arguments.length === 1) {
@@ -16,6 +16,6 @@ exports.stringify = function () {
 			}
 		}
 
-		return JSON.stringify(input, undefined, pretty);
+		return new Handlebars.SafeString(JSON.stringify(input, undefined, pretty));
 	};
 };
