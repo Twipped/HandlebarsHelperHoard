@@ -24,9 +24,10 @@ exports.humanSeconds = function (Handlebars) {
 			value = Math.floor(seconds / divs[level]);
 			seconds = seconds % divs[level];
 			if (value) {
-				stack.push( value + (value > 1 ? 's' : ''));
+				stack.push( value + ' ' + keys[level] + (value > 1 ? 's' : ''));
 				if (!detailed) break;
 			}
+			level++;
 		}
 
 		return stack.join(' ');
