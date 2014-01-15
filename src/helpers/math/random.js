@@ -3,9 +3,7 @@ exports.random = function () {
 	return function (low, high, options) {
 		switch (arguments.length) {
 		case 1:
-			low = 0;
-			high = 1;
-			break;
+			return Math.random();
 		case 2:
 			low = 0;
 			high = arguments[0];

@@ -1,13 +1,11 @@
 
-exports.multiply = function () {
+exports.mul = function () {
 	return function (valueA, valueB, options) {
 		if (arguments.length < 2) {
-			throw new Error('Handlebars Helper "multiply" needs 1 parameter minimum');
+			throw new Error('Handlebars Helper "mul" needs 1 parameter minimum');
 		}
 
-		options = arguments[arguments.length - 1];
-
-		var value = valueA;
+		var value = 1;
 
 		//with the arguments array as an entry point, descend into any sub-arrays for values to multiply the initial value by.
 		(function descend(level) {
@@ -16,7 +14,7 @@ exports.multiply = function () {
 			} else {
 				value = value * parseInt(level, 10);
 			}
-		})([].slice.call(arguments, 1, arguments.length - 2));
+		})([].slice.call(arguments, 0, arguments.length - 1));
 
 		return value;
 		

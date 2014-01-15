@@ -1,11 +1,9 @@
 
 exports.add = function () {
-	return function (valueA, valueB, options) {
+	return function (valueA, valueB) {
 		if (arguments.length <= 1) {
 			throw new Error('Handlebars Helper "block" needs 1 parameter minimum');
 		}
-
-		options = arguments[arguments.length - 1];
 
 		var value = 0;
 
@@ -16,7 +14,7 @@ exports.add = function () {
 			} else {
 				value += parseInt(level, 10);
 			}
-		})([].slice.call(arguments, 0, arguments.length - 2));
+		})([].slice.call(arguments, 0, arguments.length - 1));
 
 		return value;
 		
