@@ -34,3 +34,5 @@ module.exports = function (data) {
 		test.done();
 	});
 };
+
+module.exports.builder = buildTestsAgainstData;
