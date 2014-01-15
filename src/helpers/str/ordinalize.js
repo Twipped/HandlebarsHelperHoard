@@ -1,15 +1,12 @@
 
 exports.ordinalize = function (Handlebars) {
-	return function (input, options) {
+	return function (value) {
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "ordinalize" needs 1 parameter');
 		}
 
-		options = arguments[arguments.length - 1];
-
-		var _ref;
 		var normal = Math.abs(Math.round(value));
-		if (_ref = normal % 100, _indexOf.call([11, 12, 13], _ref) >= 0) {
+		if ([11, 12, 13].indexOf(normal % 100) >= 0) {
 			return "" + value + "th";
 		} else {
 			switch (normal % 10) {
