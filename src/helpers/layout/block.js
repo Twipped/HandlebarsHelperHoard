@@ -7,14 +7,14 @@ exports.block = function (Handlebars) {
 
 		options = arguments[arguments.length - 1];
 
-		this._blocks = this.blocks || {};
+		this._blocks = this._blocks || {};
 		
 		var block = this._blocks[name];
 
 		var optionsFn = options.fn || function () {return '';};
 
 		var result;
-		switch (block && block.fn && block.mode.toLowerCase()) {
+		switch (block && block.fn && block.mode) {
 		case 'append':
 			result = optionsFn(this) + block.fn(this);
 			break;
