@@ -1,14 +1,17 @@
 
 exports.embed = function (Handlebars) {
-	var fs = require('fs');
-	var path = require('path');
+	return function (src, cwd) {
+		var fs = require('fs');
+		var path = require('path');
 
-	return function (src) {
-		if (arguments.length === 1) {
+		switch (arguments.length) {
+		case 1:
 			throw new Error('Handlebars Helper "embed" needs 1 parameter');
+		case 2:
+			cwd = process.cwd();
 		}
 
-		var filepath = path.resolve(process.cwd(), src);
+		var filepath = path.resolve(cwd, src);
 		var content = fs.readFileSync(filepath);
 		
 		return new Handlebars.SafeString(content);
