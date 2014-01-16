@@ -10,9 +10,9 @@ exports.replace = function () {
 		switch (arguments.length) {
 		case 1:
 			if (!options.fn) {
-				throw new Error('Handlebars Helper "replace" needs 2 parameters minimum');
-			} else if (hashNeedle === undefined) {
-				throw new Error('Handlebars Helper "replace" needs a search string');
+				if (hashNeedle === undefined) {
+					throw new Error('Handlebars Helper "replace" needs a search string');
+				}
 			} else {
 				haystack = options.fn(this);
 				needle = hashNeedle;
@@ -22,16 +22,18 @@ exports.replace = function () {
 
 		case 2:
 			if (!options.fn) {
-				throw new Error('Handlebars Helper "replace" needs 2 parameters minimum');
-			} else if (hashNeedle === undefined) {
-				throw new Error('Handlebars Helper "replace" needs a search string');
+				if (hashNeedle === undefined) {
+					throw new Error('Handlebars Helper "replace" needs a search string');
+				}
+
+				needle = hashNeedle || arguments[0];
+				replacement = hashReplace || '';
 			} else {
 				haystack = options.fn(this);
 				needle = hashNeedle || arguments[0];
 				replacement = hashReplace || '';
 			}
 			break;
-
 		case 3:
 			if (!options.fn) {
 				replacement = '';
