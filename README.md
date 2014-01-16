@@ -10,7 +10,7 @@ The majority of functions have been rewritten with several purposes in mind:
 - To leverage the speed of ES5
 - To support both return syntax (`{{helper}}`) and block syntax (`{{#helper}}do stuff{{/helper}}`) on all functions, where it makes sense
 - To support `{{else}}` in all block statements, where it makes sense
-- To support data framing on all loops with @index, @first and @last values.
+- To support data framing on all loops with `@index`, `@first` and `@last` values.
 
 #Requirements
 
@@ -61,7 +61,7 @@ HelperHoard.load(Handlebars, ['extend', 'block', 'content']);
 
 ###Helper Reference Documentation
 
-Documentation is still being written, and there's a lot to write. Until then, check out the unit tests for each helper to see all supported usage examples. If you find any helpers without tests, please [let me know](http://twitter.com/ChiperSoft). (Note, `{{log}}` is lacking tests because there's no way to test console.log output)
+Documentation is still being written, and there's a lot to write. Until then, [check out the unit tests](https://github.com/ChiperSoft/HandlebarsHelperHoard/tree/master/tests) for each helper to see all supported usage examples. If you find any helpers without tests, please [let me know](http://twitter.com/ChiperSoft). (Note, `{{log}}` is lacking tests because there's no way to test console.log output)
 
 ##Building and Running Unit Tests
 
