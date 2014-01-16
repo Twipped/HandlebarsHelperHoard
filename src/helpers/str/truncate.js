@@ -46,10 +46,10 @@ exports.truncate = function () {
 		//make sure we've got a string
 		input = ''+input;
 
-		if (length < input.length) {
+		if (length > input.length) {
 			return input;
 		}
 
-		return input.substring(0, limit - suffix.length) + suffix;
+		return input.substring(0, length - suffix.length).replace(/^\s+|\s+$/gm, '') + suffix;
 	};
 };

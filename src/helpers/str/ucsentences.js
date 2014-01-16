@@ -1,9 +1,9 @@
 
-exports.ucwords = function () {
+exports.ucsentences = function () {
 	return function (input, options) {
 		options = arguments[arguments.length - 1];
 
-		if (arguments.length < 1) {
+		if (arguments.length <= 1) {
 			if (!options.fn) {
 				throw new Error('Handlebars Helper "ucwords" needs 1 parameter minimum');
 			} else {
