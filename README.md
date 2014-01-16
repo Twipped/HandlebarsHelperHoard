@@ -1,7 +1,7 @@
-Handlebars Helpers Neo
+Handlebars Helper Hoard
 ---
 
-HHN is a collection of 84 helper functions for use with [Handlebars.js](http://handlebarsjs.com).  It is inspired and based on [assemble.io's Handlebars Helpers collection](https://github.com/assemble/handlebars-helpers), but rewritten to be more portable and versatile as a standalone library, as Assemble's collection is built for use in their own environment.
+Helper Hoard is a collection of 84 helper functions for use with [Handlebars.js](http://handlebarsjs.com).  It is inspired and based on [assemble.io's Handlebars Helpers collection](https://github.com/assemble/handlebars-helpers), but rewritten to be more portable and versatile as a standalone library, as Assemble's collection is built for use in their own environment.
 
 The majority of functions have been rewritten with several purposes in mind:
 
@@ -12,11 +12,20 @@ The majority of functions have been rewritten with several purposes in mind:
 - To support `{{else}}` in all block statements, where it makes sense
 - To support data framing on all loops with @index, @first and @last values.
 
+#Requirements
+
+The Hoard as a whole has only a single dependency, it expects to be running in an ES5 environment. That means you will need [es5-shim](https://github.com/es-shims/es5-shim) to use the library in IE8 or below.  Node.js and all modern browsers should be without issue.
+
+The following helpers have specific dependencies:
+
+- `{{embed}}` only works in Node.js, as it uses the `file` and `path` modules.
+- `{{date}}` and `{{fromNow}}` both require [Moment.js](http://momentjs.com), which is used to handle the date formatting. Moment is installed by npm as a dependency. In the browser the library must be loaded before the template is invoked, either via a script include or using Browserify or RequireJS (it will attempt to load via `require()` if present).
+
 #Installation
 
-NPM: `npm install handlebars-helpers-neo`
+NPM: `npm install helpers-hoard`
 
-Bower: `bower install handlebars-helpers-neo`
+Bower: `bower install helpers-hoard`
 
 ##Usage
 
@@ -24,14 +33,14 @@ In Node.js or another CommonJS environment, initialize the library like so:
 
 ```js
 var Handlebars = require('handlebars');
-require('handlebars-helpers-neo').load(Handlebars);
+require('helper-hoard').load(Handlebars);
 ```
 
 In a browser based AMD environment such as RequireJS:
 
 ```js
-require(['handlebars', 'handlebars-helpers-neo'], function (Handlebars, HHN) {
-  HHN.load(Handlebars);
+require(['handlebars', 'helper-hoard'], function (Handlebars, Hoard) {
+  Hoard.load(Handlebars);
 });
 ```
 
@@ -39,15 +48,15 @@ In a standard browser environment:
 
 ```html
 <script src="handlebars.js"></script>
-<script src="hhn.all.js"></script>
-<script>HandlebarsHelpersNeo.load(Handlebars);</script>
+<script src="hoard.all.js"></script>
+<script>HelperHoard.load(Handlebars);</script>
 ```
 
 The `load()` function optionally supports a list of what helpers to load, if you do not want the entire library to be added to Handlebars' collection.
 
 ```js
 //loads only the layout sub-templating functions
-HandlebarsHelpersNeo.load(Handlebars, ['extend', 'block', 'content']);
+HelperHoard.load(Handlebars, ['extend', 'block', 'content']);
 ```
 
 ###Helper Reference Documentation
@@ -64,4 +73,4 @@ From inside the repository root, run `npm install` to install the NodeUnit depen
 
 ##License
 
-HHN is released under a standard MIT license, as defined in the LICENSE file.
+Helper Hoard is released under a standard MIT license, as defined in the LICENSE file.

@@ -10,14 +10,13 @@ module.exports = function(grunt) {
 				src: [
 					'src/intro.js',
 					'src/header.js',
-					'src/util.js',
 					'src/wrap-pre.js',
 					'src/helpers/**/*.js',
 					'src/wrap-post.js',
 					'src/loader.js',
 					'src/footer.js'
 				],
-				dest: 'build/hhn.all.js',
+				dest: 'build/hoard.all.js',
 			},
 		},
 
@@ -27,7 +26,7 @@ module.exports = function(grunt) {
 					banner: grunt.file.read('src/intro.js')
 				},
 				files: {
-					'build/hhn.all.min.js': 'build/hhn.all.js'
+					'build/hoard.all.min.js': 'build/hoard.all.js'
 				}
 			}
 		},

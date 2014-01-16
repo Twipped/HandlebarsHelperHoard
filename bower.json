@@ -1,14 +1,14 @@
 {
-  "name": "handlebars-helpers-neo",
+  "name": "helper-hoard",
   "version": "0.1.0",
-  "homepage": "https://github.com/ChiperSoft/HandlebarsHelpersNeo",
+  "homepage": "https://github.com/ChiperSoft/HandlebarsHelperHoard",
   "authors": [
     "Jarvis Badgley <chiper@chipersoft.com> (https://github.com/chipersoft)",
     "Jon Schlinkert (https://github.com/jonschlinkert)",
     "Brian Woodward (https://github.com/doowb)"
   ],
   "description": "A portable collection of handlebars helper functions.",
-  "main": "build/hhn.all.js",
+  "main": "build/hoard.all.js",
   "keywords": [
     "handlebars",
     "helpers"

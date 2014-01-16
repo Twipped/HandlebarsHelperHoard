@@ -1,6 +1,6 @@
 
 var Handlebars = require('handlebars');
-var HHN = require('../build/hhn.all.js').load(Handlebars);
+var HHN = require('../build/hoard.all.js').load(Handlebars);
 
 function buildTestsAgainstData(data, testFunction) {
 	var suite = {};

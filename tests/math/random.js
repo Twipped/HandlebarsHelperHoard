@@ -1,7 +1,7 @@
 
 var testBuilder = require('../testBuilder.js').builder;
 var Handlebars = require('handlebars');
-var HHN = require('../../build/hhn.all.js').load(Handlebars);
+var HHN = require('../../build/hoard.all.js').load(Handlebars);
 
 
 var makeTests = function (data) {

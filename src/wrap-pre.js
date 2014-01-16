@@ -1,3 +1,3 @@
 
-hhn.helpers = (function () {
+hoard.helpers = (function () {
 	var exports = {};

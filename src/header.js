@@ -1,4 +1,4 @@
 
 (function (context) {
 
-var hhn = {};
+var hoard = {};

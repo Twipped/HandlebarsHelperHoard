@@ -1,22 +1,28 @@
 
-hhn.load = function () {
-	var args = [].slice.call(arguments),
-		Handlebars = args.shift(),
+hoard.load = function (Handlebars) {
+	var args = [],
 		i = 0,
-		c = args.length,
+		c,
 		helper;
 
-	args = hhn.utils.flatten(args);
+	(function descend(level) {
+		if (Array.isArray(level)) {
+			level.forEach(descend);
+		} else {
+			args.push(level);
+		}
+	})([].slice.call(arguments, 1));
+
 	c = args.length;
 
 	// if no helpers were defined, load all of them.
 	if (!c) {
-		args = Object.keys(hhn.helpers);
+		args = Object.keys(hoard.helpers);
 		c = args.length;
 	}
 
 	for (;i < c; i++) {
-		helper = hhn.helpers[args[i]].call(context, Handlebars);
+		helper = hoard.helpers[args[i]].call(context, Handlebars);
 		Handlebars.registerHelper(args[i], helper);
 	}
 };

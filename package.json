@@ -1,14 +1,14 @@
 {
-  "name": "handlebars-helpers-neo",
+  "name": "helper-hoard",
   "version": "0.1.0",
-  "description": "A portable collection of handlebars helper functions.",
-  "main": "build/hhn.all.js",
+  "description": "A portable collection of handlebars helper functions for use in node and the browser.",
+  "main": "build/hoard.all.js",
   "scripts": {
     "test": "nodeunit tests/"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ChiperSoft/HandlebarsHelpersNeo"
+    "url": "https://github.com/ChiperSoft/HandlebarsHelperHoard"
   },
   "keywords": [
     "handlebars",
