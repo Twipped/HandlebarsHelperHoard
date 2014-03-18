@@ -2,8 +2,6 @@
 exports.humanSeconds = function (Handlebars) {
 	return function (seconds, detailed) {
 
-		options = arguments[arguments.length - 1];
-
 		switch (arguments.length) {
 		case 1:
 			throw new Error('Handlebars Helper "humanSeconds" needs 1 parameter');
