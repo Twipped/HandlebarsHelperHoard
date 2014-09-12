@@ -23,9 +23,9 @@ The following helpers have specific dependencies:
 
 #Installation
 
-NPM: `npm install helpers-hoard`
+NPM: `npm install helper-hoard`
 
-Bower: `bower install helpers-hoard`
+Bower: `bower install helper-hoard`
 
 ##Usage
 
