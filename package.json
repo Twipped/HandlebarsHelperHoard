@@ -4,7 +4,7 @@
   "description": "A portable collection of handlebars helper functions for use in node and the browser.",
   "main": "build/hoard.all.js",
   "scripts": {
-    "test": "nodeunit tests/"
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
