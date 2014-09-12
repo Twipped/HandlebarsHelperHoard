@@ -17,7 +17,7 @@ exports.notEmpty = function () {
 		}
 
 		if (!options.fn) {
-			return yes;
+			return yes || '';
 		} else {
 			return yes ? options.fn(this) : options.inverse(this);
 		}

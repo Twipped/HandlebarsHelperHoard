@@ -278,7 +278,7 @@ exports.all = function () {
 			yes = !!input;
 		}
 
-		if (!options.fn) return yes;
+		if (!options.fn) return yes || '';
 
 		return yes ? options.fn(this) : options.inverse(this);
 	};
@@ -314,7 +314,7 @@ exports.any = function () {
 			yes = !!input;
 		}
 
-		if (!options.fn) return yes;
+		if (!options.fn) return yes || '';
 
 		return yes ? options.fn(this) : options.inverse(this);
 	};
@@ -376,7 +376,7 @@ exports.empty = function () {
 		}
 
 		if (!options.fn) {
-			return yes;
+			return yes || '';
 		} else {
 			return yes ? options.fn(this) : options.inverse(this);
 		}
@@ -490,7 +490,7 @@ exports.inArray = function () {
 	return function (input, value, options) {
 		var result = input.indexOf(value) >= 0;
 
-		if (!options.fn) return result;
+		if (!options.fn) return result || '';
 		
 		return result ? options.fn(this) : options.inverse(this);
 	};
@@ -646,7 +646,7 @@ exports.notEmpty = function () {
 		}
 
 		if (!options.fn) {
-			return yes;
+			return yes || '';
 		} else {
 			return yes ? options.fn(this) : options.inverse(this);
 		}
@@ -853,7 +853,7 @@ exports.compare = function () {
 
 		var result = !!operators[operator](left, right);
 
-		if (!options.fn) return result;
+		if (!options.fn) return result || '';
 
 		return result ? options.fn(this) : options.inverse(this);
 	};
@@ -861,7 +861,7 @@ exports.compare = function () {
 
 exports.gt = function () {
 	return function (value, test, options) {
-		if (!options.fn) return value > test;
+		if (!options.fn) return value > test || '';
 		if (value > test) {
 			return options.fn(this);
 		} else {
@@ -872,7 +872,7 @@ exports.gt = function () {
 
 exports.gte = function () {
 	return function (value, test, options) {
-		if (!options.fn) return value >= test;
+		if (!options.fn) return value >= test || '';
 		if (value >= test) {
 			return options.fn(this);
 		} else {
@@ -892,14 +892,14 @@ exports.gte = function () {
 exports.has = function () {
 	return function (input, value, options) {
 		var result = input.indexOf(value) >= 0;
-		if (!options.fn) return result;
+		if (!options.fn) return result || '';
 		return result ? options.fn(this) : options.inverse(this);
 	};
 };
 
 exports.is = function () {
 	return function (value, test, options) {
-		if (!options.fn) return value === test;
+		if (!options.fn) return value === test || '';
 		if (value === test) {
 			return options.fn(this);
 		} else {
@@ -910,7 +910,7 @@ exports.is = function () {
 
 exports.isLike = function () {
 	return function (value, test, options) {
-		if (!options.fn) return value == test;
+		if (!options.fn) return value == test || '';
 		if (value == test) {
 			return options.fn(this);
 		} else {
@@ -921,7 +921,7 @@ exports.isLike = function () {
 
 exports.isnt = function () {
 	return function (value, test, options) {
-		if (!options.fn) return value !== test;
+		if (!options.fn) return value !== test || '';
 		if (value !== test) {
 			return options.fn(this);
 		} else {
@@ -932,7 +932,7 @@ exports.isnt = function () {
 
 exports.isntLike = function () {
 	return function (value, test, options) {
-		if (!options.fn) return value != test;
+		if (!options.fn) return value != test || '';
 		if (value != test) {
 			return options.fn(this);
 		} else {
@@ -943,7 +943,7 @@ exports.isntLike = function () {
 
 exports.lt = function () {
 	return function (value, test, options) {
-		if (!options.fn) return value < test;
+		if (!options.fn) return value < test || '';
 		if (value < test) {
 			return options.fn(this);
 		} else {
@@ -954,7 +954,7 @@ exports.lt = function () {
 
 exports.lte = function () {
 	return function (value, test, options) {
-		if (!options.fn) return value <= test;
+		if (!options.fn) return value <= test || '';
 		if (value <= test) {
 			return options.fn(this);
 		} else {
@@ -1514,7 +1514,7 @@ exports.endsWith = function () {
 		var result = haystack.substr(-needle.length) === needle;
 
 		if (!options.fn) {
-			return result;
+			return result || '';
 		}
 
 		return result ? options.fn(this) : options.inverse(this);
@@ -2700,7 +2700,7 @@ exports.startsWith = function () {
 		var result = haystack.substr(0,needle.length) === needle;
 
 		if (!options.fn) {
-			return result;
+			return result || '';
 		}
 
 		return result ? options.fn(this) : options.inverse(this);

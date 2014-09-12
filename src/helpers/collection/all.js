@@ -29,7 +29,7 @@ exports.all = function () {
 			yes = !!input;
 		}
 
-		if (!options.fn) return yes;
+		if (!options.fn) return yes || '';
 
 		return yes ? options.fn(this) : options.inverse(this);
 	};

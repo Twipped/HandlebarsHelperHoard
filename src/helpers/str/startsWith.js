@@ -14,7 +14,7 @@ exports.startsWith = function () {
 		var result = haystack.substr(0,needle.length) === needle;
 
 		if (!options.fn) {
-			return result;
+			return result || '';
 		}
 
 		return result ? options.fn(this) : options.inverse(this);

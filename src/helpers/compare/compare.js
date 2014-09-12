@@ -31,7 +31,7 @@ exports.compare = function () {
 
 		var result = !!operators[operator](left, right);
 
-		if (!options.fn) return result;
+		if (!options.fn) return result || '';
 
 		return result ? options.fn(this) : options.inverse(this);
 	};
