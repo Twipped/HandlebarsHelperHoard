@@ -21,6 +21,13 @@ exports.humanSeconds = function (Handlebars) {
 		while (seconds) {
 			value = Math.floor(seconds / divs[level]);
 			seconds = seconds % divs[level];
+
+			//if we're on the last unit and the remaining seconds is greater than half the current unit size
+			if (level === divs.length - 1 && seconds > divs[level] / 2) {
+				//round up
+				value++;
+			}
+
 			if (value) {
 				stack.push( value + ' ' + keys[level] + (value > 1 ? 's' : ''));
 				if (!detailed) break;
