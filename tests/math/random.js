@@ -12,7 +12,12 @@ var makeTests = function (data) {
 		//run the random call many times to make sure we have a safe sample size
 		while (i--) {
 			actual = parseInt(template(data.input),10);
-			good = good && actual >= data.low && actual <= data.high;
+			if (actual < data.low || actual > data.high) {
+				good = false;
+				test.ok(false, 'Received value: ' + actual);
+				break;
+			}
+
 		}
 
 		test.ok(good);
