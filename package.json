@@ -1,6 +1,6 @@
 {
   "name": "helper-hoard",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A portable collection of handlebars helper functions for use in node and the browser.",
   "main": "build/hoard.all.js",
   "scripts": {
