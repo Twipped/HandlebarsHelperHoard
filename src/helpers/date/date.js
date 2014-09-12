@@ -17,7 +17,12 @@ exports.date = function () {
 			input = moment();
 			break;
 		case 3:
-			input = moment(input, options.hash && options.hash.parse || undefined);
+			var parse = options.hash && options.hash.parse || undefined;
+			if (parse) {
+				input = moment(input, parse);
+			} else {
+				input = moment(new Date(input));
+			}
 			break;
 		}
 

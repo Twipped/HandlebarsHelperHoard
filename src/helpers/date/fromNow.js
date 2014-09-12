@@ -11,7 +11,12 @@ exports.fromNow = function () {
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "fromNow" needs 1 parameter');
 		} else {
-			input = moment(input, options.hash && options.hash.parse || undefined);
+			var parse = options.hash && options.hash.parse || undefined;
+			if (parse) {
+				input = moment(input, parse);
+			} else {
+				input = moment(new Date(input));
+			}
 		}
 
 		if (!input.isValid()) {

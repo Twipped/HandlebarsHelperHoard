@@ -1,8 +1,8 @@
 
 var makeTests = require('../testBuilder.js');
 var moment = require('moment');
-var past = moment().subtract('days', 70).format();
-var future = moment().add('weeks', 2).format();
+var past = moment().subtract(70, 'days').format();
+var future = moment().add(2, 'weeks').format();
 
 module.exports = makeTests([
 	{

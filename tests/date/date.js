@@ -21,5 +21,10 @@ module.exports = makeTests([
 		template: '{{date a b parse=c}}',
 		input: {a:'MMM Do, YYYY', b:'12,02,2010', c:'MM,DD,YYYY'},
 		output: 'Dec 2nd, 2010'
-	}
+	},
+	{
+		template: '{{date a b}}',
+		input: {a:'MMM Mo, YYYY', b:'dsaADFASDF'},
+		output: ''
+	},
 ]);
