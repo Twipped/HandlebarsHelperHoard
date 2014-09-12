@@ -1,6 +1,13 @@
 Handlebars Helper Hoard
 ---
 
+[![NPM version](https://img.shields.io/npm/v/helper-hoard.svg)](http://badge.fury.io/js/helper-hoard)
+[![Licensed MIT](https://img.shields.io/npm/l/helper-hoard.svg)](https://github.com/ChiperSoft/HandlebarsHelperHoard/blob/master/LICENSE.txt)
+[![Nodejs 0.10+](https://img.shields.io/badge/node.js-%3E=_0.10-brightgreen.svg?style=flat)]
+[![Downloads](http://img.shields.io/npm/dm/helper-hoard.svg)](http://npmjs.org/helper-hoard)
+[![Build Status](https://img.shields.io/travis/ChiperSoft/HandlebarsHelperHoard.svg)](https://travis-ci.org/ChiperSoft/HandlebarsHelperHoard)
+[![Gittip](http://img.shields.io/gittip/chipersoft.svg)](https://www.gittip.com/chipersoft/)
+
 Helper Hoard is a collection of 84 helper functions for use with [Handlebars.js](http://handlebarsjs.com).  It is inspired and based on [assemble.io's Handlebars Helpers collection](https://github.com/assemble/handlebars-helpers), but rewritten to be more portable and versatile as a standalone library, as Assemble's collection is built for use in their own environment.
 
 The majority of functions have been rewritten with several purposes in mind:
