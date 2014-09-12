@@ -65,11 +65,7 @@ Documentation is still being written, and there's a lot to write. Until then, [c
 
 ##Building and Running Unit Tests
 
-From inside the repository root, run `npm install` to install the NodeUnit dependency.
-
-**With Grunt Installed**: `grunt test`
-
-**Without Grunt Installed**: `npm test` (note, this runs against the last build, and only grunt is setup to create new builds)
+From inside the repository root, run `npm install` to install the dev dependencies, and then `npm test` to kick off the build and test process.
 
 ##License
 
