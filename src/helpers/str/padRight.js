@@ -9,16 +9,16 @@ exports.padRight = function () {
 				throw new Error('Handlebars Helper "padRight" needs 2 parameters minimum');
 			} else {
 				input = options.fn(this);
-				length = options.hash && options.hash.length || 0;
+				length = options.hash && options.hash.size || 0;
 				using = options.hash && options.hash.using || ' ';
 			}
 			break;
 		case 2:
-			length = 0;
+			length = options.hash && options.hash.size || 0;
 			using = ' ';
 			break;
 		case 3:
-			using = ' ';
+			using = options.hash && options.hash.using || ' ';
 			break;
 		}
 

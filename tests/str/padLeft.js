@@ -28,7 +28,12 @@ module.exports = makeTests([
 		output: '1234567890&nbsp;&nbsp;'
 	},
 	{
-		template: '{{#padLeft length=12 using="."}}{{a}}{{/padLeft}}',
+		template: '{{{padLeft a size=12 using="."}}}',
+		input: {a:'1234567890'},
+		output: '1234567890..'
+	},
+	{
+		template: '{{#padLeft size=12 using="."}}{{a}}{{/padLeft}}',
 		input: {a:'1234567890'},
 		output: '1234567890..'
 	}

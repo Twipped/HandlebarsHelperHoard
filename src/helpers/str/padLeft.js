@@ -2,23 +2,22 @@
 exports.padLeft = function () {
 	return function (input, length, using, options) {
 		options = arguments[arguments.length - 1];
-
 		switch (arguments.length) {
 		case 1:
 			if (!options.fn) {
 				throw new Error('Handlebars Helper "padLeft" needs 2 parameters minimum');
 			} else {
 				input = options.fn(this);
-				length = options.hash && options.hash.length || 0;
+				length = options.hash && options.hash.size || 0;
 				using = options.hash && options.hash.using || ' ';
 			}
 			break;
 		case 2:
-			length = 0;
-			using = ' ';
+			length = options.hash && options.hash.size || 0;
+			using = options.hash && options.hash.using || ' ';
 			break;
 		case 3:
-			using = ' ';
+			using = options.hash && options.hash.using || ' ';
 			break;
 		}
 
