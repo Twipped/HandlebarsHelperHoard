@@ -1,10 +1,10 @@
 /**
- * Handlebars Helpers Neo
+ * helper-hoard
  *
  * A collection of helper functions for the Handlebars template engine.
  * Based upon work by @jonschlinkert and @doowb for Assemble.io
  *
- * Copyright (c) 2013-2014, Jarvis Badgley, Jon Schlinkert, Brian Woodward, contributers
+ * Copyright (c) 2013-2015, Jarvis Badgley, Jon Schlinkert, Brian Woodward, other contributers
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the

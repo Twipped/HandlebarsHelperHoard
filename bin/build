@@ -1,0 +1,37 @@
+#!/usr/bin/env node
+var program = require('commander');
+var builder = require('../builder');
+
+program
+	.version(require('../package.json').version)
+	.option('-o, --output <path>', 'build destination (defaults to helper-hoard.custom.js in the current directory)')
+	.option('-s, --stdout', 'output the result to stdout')
+	.option('-m, --minify', 'minify the output using UglifyJS')
+	.option('-i, --helpers <flags>', 'comma or space separated list of +additions or -exclusions')
+	.option('--list', 'list all available helpers and helper groups available for selection');
+
+program.parse(process.argv);
+
+if (program.list) {
+	process.stdout.write("\nAvailable Groups:\n" + builder.groups.join(', '));
+	process.stdout.write('\n\n');
+	process.stdout.write("Available Helpers:\n" + builder.helpers.join(', '));
+	process.stdout.write('\n\n');
+	
+
+} else {
+
+	var out;
+	if (program.stdout) {
+		out = null;
+	} else {
+		out = program.output || 'helper-hoard.custom.js';
+	}
+
+	builder({
+		output: out,
+		minify: program.minify,
+		flags: program.helpers && program.helpers.split(/[\s,]+/)
+	});
+
+}

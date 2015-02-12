@@ -4,7 +4,13 @@
   "description": "A portable collection of handlebars helper functions for use in node and the browser.",
   "main": "build/hoard.all.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "npm run build-all && nodeunit tests/*/*.js",
+    "build": "npm run build-all && npm run build-all-minified",
+    "build-all": "./bin/build -o build/hoard.all.js",
+    "build-all-minified": "./bin/build -mo build/hoard.all.min.js"
+  },
+  "bin": {
+    "helper-hoard": "./bin/build"
   },
   "repository": {
     "type": "git",
@@ -17,14 +23,15 @@
   "author": "Jarvis Badgley <chiper@chipersoft.com> (http://chipersoft.com/)",
   "license": "MIT",
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-cli": "^0.1.13",
-    "grunt-contrib-concat": "~0.5.0",
-    "grunt-contrib-nodeunit": "~0.4.1",
-    "grunt-contrib-uglify": "~0.5.1",
-    "handlebars": "^2.0.0"
+    "async": "^0.9.0",
+    "commander": "^2.6.0",
+    "glob": "^4.3.5",
+    "handlebars": "^3.0.0",
+    "nodeunit": "^0.9.0",
+    "nsdeclare": "^0.1.0",
+    "uglify-js": "^2.4.16"
   },
   "dependencies": {
-    "moment": "~2.8.3"
+    "moment": "^2.8.4"
   }
 }

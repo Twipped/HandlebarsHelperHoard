@@ -1,4 +1,0 @@
-
-(function (context) {
-
-var hoard = {};
