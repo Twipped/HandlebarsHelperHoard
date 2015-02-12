@@ -1,6 +1,6 @@
 
 exports.mul = function () {
-	return function (valueA, valueB, options) {
+	return function () {
 		if (arguments.length < 2) {
 			throw new Error('Handlebars Helper "mul" needs 1 parameter minimum');
 		}

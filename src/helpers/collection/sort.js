@@ -11,7 +11,6 @@ exports.sort = function (Handlebars) {
 			field = undefined;
 		}
 
-
 		var results;
 		if (field === undefined) {
 			results = array.sort();

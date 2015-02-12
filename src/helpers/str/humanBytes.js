@@ -1,6 +1,5 @@
 
-
-exports.humanBytes = function (Handlebars) {
+exports.humanBytes = function () {
 	return function (value) {
 		var bytes = Math.abs(parseInt(value, 10));
 		if (isNaN(bytes)) {
@@ -18,7 +17,7 @@ exports.humanBytes = function (Handlebars) {
 			// No decimals for anything smaller than 1 MB
 			resValue = (bytes / Math.pow(1000, Math.floor(resInt)));
 			//only show a decimal place if the decimal will round to something other than .0
-			resValue = resValue.toFixed(resValue % 1 > 0.1 ? 1 : 0)
+			resValue = resValue.toFixed(resValue % 1 > 0.1 ? 1 : 0);
 			if (bytes === 1) {
 				resInt = -1; // special case: 1 byte (singular)
 			}

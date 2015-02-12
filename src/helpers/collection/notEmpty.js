@@ -6,7 +6,7 @@
  */
 exports.notEmpty = function () {
 	return function (input, options) {
-		var i,c, yes = false;
+		var yes = false;
 		if (Array.isArray(input)) {
 			yes = input.length > 0;
 		} else if (typeof input === 'object') {

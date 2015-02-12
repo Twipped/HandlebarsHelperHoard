@@ -1,5 +1,5 @@
 
-exports.padCenter = function (Handlebars) {
+exports.padCenter = function () {
 	return function (input, length, using, options) {
 		options = arguments[arguments.length - 1];
 

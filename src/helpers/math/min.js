@@ -1,6 +1,6 @@
 
 exports.min = function () {
-	return function (valueA, valueB, options) {
+	return function () {
 		if (arguments.length <= 1) {
 			throw new Error('Handlebars Helper "min" needs 1 parameter minimum');
 		}

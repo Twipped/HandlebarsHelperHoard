@@ -1,5 +1,4 @@
 
-
 exports.script = function (Handlebars) {
 	return function (input) {
 		

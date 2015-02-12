@@ -1,5 +1,5 @@
 
-exports.prepend = function (Handlebars) {
+exports.prepend = function () {
 	return function (name, options) {
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "prepend" needs 1 parameter');

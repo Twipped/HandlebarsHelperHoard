@@ -1,5 +1,5 @@
 
-exports.append = function (Handlebars) {
+exports.append = function () {
 	return function (name, options) {
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "append" needs 1 parameter');

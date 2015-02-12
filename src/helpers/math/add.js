@@ -1,6 +1,6 @@
 
 exports.add = function () {
-	return function (valueA, valueB) {
+	return function () {
 		if (arguments.length <= 1) {
 			throw new Error('Handlebars Helper "block" needs 1 parameter minimum');
 		}

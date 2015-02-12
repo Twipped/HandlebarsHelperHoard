@@ -1,5 +1,4 @@
 
-
 exports.ol = function (Handlebars) {
 	return function (input, options) {
 		options = arguments[arguments.length - 1];
@@ -12,7 +11,7 @@ exports.ol = function (Handlebars) {
 
 		if (options.hash) {
 			Object.keys(options.hash).forEach(function (key) {
-				stack.push(' ' + key + '="' + hash[key] + '"');
+				stack.push(' ' + key + '="' + options.hash[key] + '"');
 			});
 		}
 
@@ -23,7 +22,7 @@ exports.ol = function (Handlebars) {
 		}
 
 		if (!options.fn) {
-			input.forEach(function (item, i) {
+			input.forEach(function (item) {
 				stack.push('<li>' + Handlebars.Utils.escapeExpression(item) + '</li>');
 			});
 		} else {

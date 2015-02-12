@@ -1,5 +1,5 @@
 
-exports.ordinalize = function (Handlebars) {
+exports.ordinalize = function () {
 	return function (value) {
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "ordinalize" needs 1 parameter');

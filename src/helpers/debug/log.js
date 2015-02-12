@@ -1,6 +1,6 @@
 
 exports.log = function () {
-	return function (value, options) {
+	return function () {
 		if (arguments.length === 1) {
 			console.log(this);
 		} else {

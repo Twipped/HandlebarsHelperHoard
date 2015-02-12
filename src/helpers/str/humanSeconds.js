@@ -1,5 +1,5 @@
 
-exports.humanSeconds = function (Handlebars) {
+exports.humanSeconds = function () {
 	return function (seconds, detailed) {
 
 		switch (arguments.length) {

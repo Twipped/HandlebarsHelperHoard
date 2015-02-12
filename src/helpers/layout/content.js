@@ -1,5 +1,5 @@
 
-exports.content = function (Handlebars) {
+exports.content = function () {
 	return function (name, mode, options) {
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "content" needs 1 parameter');

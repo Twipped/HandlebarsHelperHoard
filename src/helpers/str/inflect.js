@@ -1,5 +1,5 @@
 
-exports.inflect = function (Handlebars) {
+exports.inflect = function () {
 	return function (count, singular, plural, include, options) {
 		if (arguments.length < 4) {
 			throw new Error('Handlebars Helper "inflect" needs 3 parameters');

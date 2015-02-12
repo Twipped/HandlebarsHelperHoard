@@ -1,6 +1,6 @@
 
 exports.max = function () {
-	return function (valueA, valueB, options) {
+	return function () {
 		if (arguments.length <= 1) {
 			throw new Error('Handlebars Helper "max" needs 1 parameter minimum');
 		}

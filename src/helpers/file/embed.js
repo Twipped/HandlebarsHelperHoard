@@ -17,3 +17,5 @@ exports.embed = function (Handlebars) {
 		return new Handlebars.SafeString(content);
 	};
 };
+
+exports.embed.noBrowser = true;

@@ -1,6 +1,6 @@
 
 exports.div = function () {
-	return function (valueA, valueB, options) {
+	return function () {
 		if (arguments.length <= 1) {
 			throw new Error('Handlebars Helper "div" needs 1 parameter minimum');
 		}

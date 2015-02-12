@@ -21,7 +21,7 @@ exports.compare = function () {
 			'>':      function(l, r) {return l > r; },
 			'<=':     function(l, r) {return l <= r; },
 			'>=':     function(l, r) {return l >= r; },
-			'typeof': function(l, r) {return typeof l == r; },
+			'typeof': function(l, r) {return typeof l === r; },
 			'%':      function(l, r) {return l % r; }
 		};
 

@@ -1,6 +1,6 @@
 
 exports.random = function () {
-	return function (low, high, options) {
+	return function (low, high) {
 		switch (arguments.length) {
 		case 1:
 			return Math.random();
@@ -11,6 +11,5 @@ exports.random = function () {
 		}
 
 		return Math.floor(Math.random()*(high-low)+low);
-		
 	};
 };

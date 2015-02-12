@@ -1,6 +1,6 @@
 
 exports.sub = function () {
-	return function (valueA, valueB, options) {
+	return function () {
 		if (arguments.length < 2) {
 			throw new Error('Handlebars Helper "sub" needs 1 parameter minimum');
 		}

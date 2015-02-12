@@ -1,6 +1,6 @@
 
 exports.floor = function () {
-	return function (value, options) {
+	return function (value) {
 		if (arguments.length < 2) {
 			throw new Error('Handlebars Helper "floor" needs 1 parameter minimum');
 		}

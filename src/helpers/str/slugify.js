@@ -1,6 +1,6 @@
 
 exports.slugify = function () {
-	return function (input, delimiter, separators) {
+	return function (input, delimiter, separators, options) {
 		options = arguments[arguments.length - 1];
 
 		switch (arguments.length) {
@@ -15,9 +15,9 @@ exports.slugify = function () {
 			break;
 		}
 
+		delimiter = delimiter || '-';
 		var i = separators && separators.length,
 			slug = input,
-			delimiter = delimiter || '-',
 			regexEscape = new RegExp(/[[\/\\^$*+?.()|{}\]]/g),
 			regexDelimiter = delimiter.replace(regexEscape, "\\$&"),
 			prohibited = new RegExp("([^a-z0-9" + regexDelimiter + "])", "g"),
@@ -324,7 +324,6 @@ exports.slugify = function () {
 				'ᶊ': 's',
 				'ʂ': 's',
 				'ȿ': 's',
-				'г': 's',
 				
 				'ť': 't',
 				'ṫ': 't',
@@ -690,5 +689,5 @@ exports.slugify = function () {
 		slug = slug.replace(trim, "$1");
 
 		return slug;
-	}
-}
+	};
+};

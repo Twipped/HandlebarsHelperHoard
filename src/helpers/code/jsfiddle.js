@@ -1,6 +1,6 @@
 
 exports.jsfiddle = function (Handlebars) {
-	return function (id, tabs) {
+	return function (id, tabs, options) {
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "jsfiddle" needs 1 parameter');
 		}

@@ -1,5 +1,4 @@
 
-
 exports.filter = function (Handlebars) {
 	return function(input, value, property, options) {
 
@@ -9,7 +8,7 @@ exports.filter = function (Handlebars) {
 
 		switch (arguments.length) {
 		case 1:
-			throw new Error('Handlebars Helper "filter" needs atleast 1 parameter');
+			throw new Error('Handlebars Helper "filter" needs at least 1 parameter');
 		case 2:
 			property = options.hash && options.hash.property;
 			value = options.hash && options.hash.value;
@@ -35,9 +34,6 @@ exports.filter = function (Handlebars) {
 
 		if (!options.fn) return results;
 
-		var that = this;
-
-
 		if(results && results.length > 0) {
 			var data = Handlebars.createFrame(options.data);
 			return results.map(function (result, i) {
@@ -49,7 +45,6 @@ exports.filter = function (Handlebars) {
 		} else {
 			return options.inverse(this);
 		}
-		return content;
+
 	};
 };
-

@@ -1,6 +1,6 @@
 
 exports.humanNumber = function () {
-	return function (number, digits) {
+	return function (number, digits, options) {
 		if (arguments.length < 1) {
 			throw new Error('Handlebars Helper "numberAbbr" needs 1 parameter minimum');
 		}

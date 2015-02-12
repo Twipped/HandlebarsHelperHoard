@@ -1,5 +1,4 @@
 
-
 exports.link = function (Handlebars) {
 	return function (input) {
 		

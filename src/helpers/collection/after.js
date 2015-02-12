@@ -1,5 +1,6 @@
 
 /**
+ * {{after}}
  * Returns all of the items in the collection after the specified count.
  * @param  {Array}  array Collection
  * @param  {Number} count Number of items to exclude

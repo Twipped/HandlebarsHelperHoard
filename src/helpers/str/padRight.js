@@ -1,5 +1,5 @@
 
-exports.padRight = function (Handlebars) {
+exports.padRight = function () {
 	return function (input, length, using, options) {
 		options = arguments[arguments.length - 1];
 
