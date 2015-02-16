@@ -10,7 +10,7 @@ module.exports = makeTests([
 	{
 		template: '{{filter original 2 }}',
 		input: {original: [0,1,2, undefined, 3, null, 4]},
-		output: '2'
+		output: '0,1,,3,,4'
 	},
 	{
 		template: '{{#filter original 1 "a"}}|{{#each this}}{{@key}}:{{this}},{{/each}}|{{else}}no{{/filter}}',
@@ -28,8 +28,8 @@ module.exports = makeTests([
 		output: 'no'
 	},
 	{
-		template: '{{#filter original value=5}}|{{this}}|{{else}}no{{/filter}}',
-		input: {original: [1,2,3]},
+		template: '{{#filter original property="a" value=2}}|{{this}}|{{else}}no{{/filter}}',
+		input: {original: [{a:1}, {b:1}]},
 		output: 'no'
 	}
 ]);

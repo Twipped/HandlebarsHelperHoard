@@ -16,13 +16,13 @@ exports.filter = function (Handlebars) {
 			if (property && value) {
 				condition = function (d) { return d[property] == value; };
 			} else if (property) {
-				condition = function (d) { return d[property] !== undefined; };
+				condition = function (d) { return !!d[property]; };
 			} else if (value) {
-				condition = function (d) { return d === value; };
+				condition = function (d) { return d !== value; };
 			}
 			break;
 		case 3:
-			condition = function (d) { return d === value; };
+			condition = function (d) { return d !== value; };
 			break;
 
 		default:
