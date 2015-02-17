@@ -1,6 +1,6 @@
 
 exports.sort = function (Handlebars) {
-	return function (array, field, options) {
+	return function (input, key, options) {
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "sort" needs 1 parameter');
 		}
@@ -8,15 +8,18 @@ exports.sort = function (Handlebars) {
 		options = arguments[arguments.length - 1];
 
 		if (arguments.length === 2) {
-			field = undefined;
+			key = undefined;
 		}
 
-		var results;
-		if (field === undefined) {
-			results = array.sort();
+		var results = input.concat();
+		if (key === undefined) {
+			results.sort();
 		} else {
-			results = array.sort(function (a, b) {
-				return a[field] > b[field];
+			results.sort(function (a, b) {
+				if (typeof a !== 'object' && typeof b !== 'object') return 0;
+				if (typeof a !== 'object') return -1;
+				if (typeof b !== 'object') return 1;
+				return a[key] > b[key];
 			});
 		}
 
