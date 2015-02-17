@@ -1,5 +1,12 @@
 
 exports.link = function (Handlebars) {
+	/**
+	 * Generate a `<link>` tag for a url (css/html/less)
+	 * @category code
+	 * @signature {{link url[, rel]}}
+	 * @param  {string} url
+	 * @param  {string} [rel] File type.
+	 */
 	return function link (url, rel) {
 		if (arguments.length === 2) rel = undefined;
 		
@@ -26,4 +33,5 @@ exports.link = function (Handlebars) {
 		}
 
 	};
+	/***/
 };

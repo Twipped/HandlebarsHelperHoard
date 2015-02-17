@@ -1,6 +1,17 @@
 
 exports.ol = function (Handlebars) {
-	return function (input, options) {
+	/**
+	 * Generate an ordered list
+	 * @category code
+	 * @signature {{ol items}}
+	 * @param  {array<mixed>} input   Items to be iterated over, outputting directly to as LI contents.
+	 *
+	 * @signature {{#ol items}}<TEMPLATE>[{{else}}<TEMPLATE>]{{/ol}}
+	 * @param  {array<mixed>} input Items to apply the enclosed template against to produce LI contents.
+	 * @example
+	 * {{#ol emails class="email-list"}}<a href="mailto:{{this}}">{{this}}</a>{{else}}There are no emails.{{/ol}}
+	 */
+	return function ol (input, options) {
 		options = arguments[arguments.length - 1];
 
 		if (arguments.length === 1) {
@@ -43,4 +54,5 @@ exports.ol = function (Handlebars) {
 
 		return new Handlebars.SafeString(stack.join(''));
 	};
+	/***/
 };

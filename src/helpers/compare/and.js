@@ -1,8 +1,4 @@
 
-/**
- * And
- * Conditionally render a block if all of the values is truthy.
- */
 exports.and = function () {
 	return function (a, b, options) {
 		var args = [].slice.call(arguments, 1);

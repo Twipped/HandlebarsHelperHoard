@@ -1,14 +1,24 @@
 
-/**
- * {{first}}
- * Returns the first item in a collection.
- *
- * @param  {Array}  array
- * @param  {[type]} count
- * @return {[type]}
- */
 exports.first = function (Handlebars) {
-	return function (array, count, options) {
+	/**
+	 * Returns the first N items in the passed array.
+	 * May be used inline or as an iterator. Else condition evaluates if result is empty.
+	 *
+	 * @category collections
+	 * @signature {{first input[ count]}}
+	 * @param  {Array}  input Collection
+	 * @param  {Number} [count] Number of items to exclude
+	 * @return {Array} Array excluding the number of items specified
+	 *
+	 * @signature {{#first input[ count]}}<TEMPLATE>[{{else}}<TEMPLATE>]{{/first}}
+	 * @param  {Array}  input Collection
+	 * @param  {Number} [count] Number of items to exclude
+	 * @example
+	 * // items = ['a','b','c','d','e','f']
+	 * {{#first items, 2}}<span>{{this}}</span>{{/first}}
+	 * // Result: <span>a</span><span>b</span>
+	 */
+	return function first (input, count, options) {
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "first" needs 2 parameters');
 		}
@@ -20,9 +30,9 @@ exports.first = function (Handlebars) {
 		}
 
 		if (!options.fn) {
-			return count > 1 ? array.slice(0, count) : array[0];
+			return count > 1 ? input.slice(0, count) : input[0];
 		} else {
-			var results = count ? array.slice(0, count) : [array[0]];
+			var results = count ? input.slice(0, count) : [input[0]];
 			if (results.length) {
 				var data = Handlebars.createFrame(options.data);
 				return results.map(function (result, i) {
@@ -36,4 +46,5 @@ exports.first = function (Handlebars) {
 			}
 		}
 	};
+	/***/
 };

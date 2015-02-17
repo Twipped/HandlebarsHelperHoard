@@ -1,10 +1,17 @@
 
 exports.gist = function (Handlebars) {
-	return function (id) {
-		id = Handlebars.Utils.escapeExpression(id);
+	/**
+	 * Creates a Github Gist embed
+	 * @category code
+	 * @signature {{gist gistId}}
+	 * @param  {string|integer} gistId Gist id
+	 */
+	return function gist (gistId) {
+		gistId = Handlebars.Utils.escapeExpression(gistId);
 		
-		var result = '<script src="https://gist.github.com/' + id + '.js"></script>';
+		var result = '<script src="https://gist.github.com/' + gistId + '.js"></script>';
 		
 		return new Handlebars.SafeString(result);
 	};
+	/***/
 };

@@ -1,12 +1,24 @@
 
-/**
- * Returns the last item in a collection. Opposite of `first`.
- * @param  {Array}  array [description]
- * @param  {[type]} count [description]
- * @return {[type]}       [description]
- */
 exports.last = function (Handlebars) {
-	return function (array, count, options) {
+	/**
+	 * Returns the last N items in the passed array.
+	 * May be used inline or as an iterator. Else condition evaluates if result is empty.
+	 *
+	 * @category collections
+	 * @signature {{last input[ count]}}
+	 * @param  {Array}  input Collection
+	 * @param  {Number} [count] Number of items to exclude
+	 * @return {Array} Array excluding the number of items specified
+	 *
+	 * @signature {{#last input[ count]}}<TEMPLATE>[{{else}}<TEMPLATE>]{{/last}}
+	 * @param  {Array}  input Collection
+	 * @param  {Number} [count] Number of items to exclude
+	 * @example
+	 * // items = ['a','b','c','d','e','f']
+	 * {{#last items, 2}}<span>{{this}}</span>{{/last}}
+	 * // Result: <span>a</span><span>b</span>
+	 */
+	return function last (input, count, options) {
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "last" needs 2 parameters');
 		}
@@ -18,9 +30,9 @@ exports.last = function (Handlebars) {
 		}
 
 		if (!options.fn) {
-			return count > 1 ? array.slice(-count) : array[array.length - 1];
+			return count > 1 ? input.slice(-count) : input[input.length - 1];
 		} else {
-			var results = count ? array.slice(-count) : [array[array.length - 1]];
+			var results = count ? input.slice(-count) : [input[input.length - 1]];
 			if (results.length) {
 				var data = Handlebars.createFrame(options.data);
 				return results.map(function (result, i) {

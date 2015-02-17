@@ -1,19 +1,30 @@
 
 exports.values = function (Handlebars) {
-	return function (array, options) {
-		if (!Array.isArray(array) && typeof array === 'object') {
-			array = Object.keys(array).map(function (k) { return array[k]; });
+	/**
+	 * Returns the values of an array or object.
+	 * May be used inline or as an iterator. Else condition evaluates if result is empty.
+	 *
+	 * @category collections
+	 * @signature {{values input}}
+	 * @param  {array<mixed>|object} input
+	 * @return {array<mixed>}
+	 *
+	 * @signature {{#values}}<TEMPLATE>[{{else}}<TEMPLATE>]{{/values}}
+	 */
+	return function values (input, options) {
+		if (!Array.isArray(input) && typeof input === 'object') {
+			input = Object.keys(input).map(function (k) { return input[k]; });
 		}
 
 		if (!options.fn) {
-			return array;
+			return input;
 		} else {
-			if (array.length) {
+			if (input.length) {
 				var data = Handlebars.createFrame(options.data);
-				return array.map(function (result, i) {
+				return input.map(function (result, i) {
 					data.index = i;
 					data.first = (i === 0);
-					data.last  = (i === array.length - 1);
+					data.last  = (i === input.length - 1);
 					return options.fn(result, {data: data});
 				}).join('');
 			} else {
@@ -21,4 +32,5 @@ exports.values = function (Handlebars) {
 			}
 		}
 	};
+	/***/
 };

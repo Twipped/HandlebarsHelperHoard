@@ -1,11 +1,21 @@
 
-/**
- * {{empty}}
- * @param  {Array}  array
- * @param  {Object} options
- */
 exports.notEmpty = function () {
-	return function (input, options) {
+	/**
+	 * Opposite of {{empty}}
+	 *
+	 * @category collections
+	 * @signature {{notEmpty input}}
+	 * @param  {string|array|object} input
+	 * @return {boolean}
+	 *
+	 * @signature {{#notEmpty input}}<TEMPLATE>[{{else}}<TEMPLATE>]{{/notEmpty}}
+	 * @param  {string|array|object} input
+	 * @example
+	 * // items = ['a']
+	 * {{#notEmpty items}}is not empty{{else}}is empty{{/notEmpty}}
+	 * // Result: 'is not empty'
+	 */
+	return function notEmpty (input, options) {
 		var yes = false;
 		if (Array.isArray(input)) {
 			yes = input.length > 0;
@@ -22,4 +32,5 @@ exports.notEmpty = function () {
 			return yes ? options.fn(this) : options.inverse(this);
 		}
 	};
+	/***/
 };

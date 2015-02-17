@@ -1,13 +1,24 @@
 
-/**
- * {{after}}
- * Returns all of the items in the collection after the specified count.
- * @param  {Array}  array Collection
- * @param  {Number} count Number of items to exclude
- * @return {Array}        Array excluding the number of items specified
- */
 exports.after = function (Handlebars) {
-	return function (array, count, options) {
+	/**
+	 * Returns all of the items in the collection after the specified index.
+	 * May be used inline or as an iterator.
+	 *
+	 * @category collections
+	 * @signature {{after items[ count]}}
+	 * @param  {Array}  input Collection
+	 * @param  {Number} [count] Number of items to exclude
+	 * @return {Array} Array excluding the number of items specified
+	 *
+	 * @signature {{#after input[ count]}}<TEMPLATE>[{{else}}<TEMPLATE>]{{/after}}
+	 * @param  {Array}  input Collection
+	 * @param  {Number} [count] Number of items to exclude
+	 * @example
+	 * // items = ['a','b','c','d','e','f']
+	 * {{#after items, 2}}<span>{{this}}</span>{{/after}}
+	 * // Result: <span>c</span><span>d</span><span>e</span><span>f</span>
+	 */
+	return function after (input, count, options) {
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "after" needs 2 parameters');
 		}
@@ -18,7 +29,7 @@ exports.after = function (Handlebars) {
 			count = undefined;
 		}
 
-		var results = array.slice(count);
+		var results = input.slice(count);
 		if (!options.fn) {
 			return results;
 		} else {
@@ -35,4 +46,5 @@ exports.after = function (Handlebars) {
 			}
 		}
 	};
+	/***/
 };

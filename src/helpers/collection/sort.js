@@ -1,6 +1,20 @@
 
 exports.sort = function (Handlebars) {
-	return function (input, key, options) {
+	/**
+	 * Sorts the provided array.
+	 * May be used inline or as an iterator. Else condition evaluates if result is empty.
+	 *
+	 * @category collections
+	 * @signature {{sort input[ key]}}
+	 * @param  {array<mixed>} input
+	 * @param  {string} [key] If the input is an array of objects, pass this argument to indicate what key should be compared.
+	 * @return {array}
+	 *
+	 * @signature {{#sort input[ key]}}<TEMPLATE>[{{else}}<TEMPLATE>]{{/sort}}
+	 * @param  {array<mixed>} input
+	 * @param  {string} [key] If the input is an array of objects, pass this argument to indicate what key should be compared.
+	 */
+	return function sort (input, key, options) {
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "sort" needs 1 parameter');
 		}
@@ -39,4 +53,5 @@ exports.sort = function (Handlebars) {
 			}
 		}
 	};
+	/***/
 };

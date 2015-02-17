@@ -1,6 +1,18 @@
 
 exports.ul = function (Handlebars) {
-	return function (input, options) {
+	/**
+	 * Generate an unordered list from an array.
+	 * Any named properties will be applied to the UL tag.
+	 * @category code
+	 * @signature {{ul items}}
+	 * @param  {array<mixed>} input   Items to be iterated over, outputting directly to as LI contents.
+	 *
+	 * @signature {{#ul items}}<TEMPLATE>[{{else}}<TEMPLATE>]{{/ul}}
+	 * @param  {array<mixed>} input Items to apply the enclosed template against to produce LI contents.
+	 * @example
+	 * {{#ul emails class="email-list"}}<a href="mailto:{{this}}">{{this}}</a>{{else}}There are no emails.{{/ul}}
+	 */
+	return function ul (input, options) {
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "ul" needs 1 parameter');
 		}
@@ -43,4 +55,5 @@ exports.ul = function (Handlebars) {
 
 		return new Handlebars.SafeString(stack.join(''));
 	};
+	/***/
 };

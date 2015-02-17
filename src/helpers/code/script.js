@@ -1,5 +1,13 @@
 
 exports.script = function (Handlebars) {
+	/**
+	 * Generate a `<script>` tag for a url (css/html/less)
+	 * @category code
+	 * @signature {{script url[, type]}}
+	 * @param  {string|array<string>} url
+	 * @param  {string} [type]  Mime-type
+	 * @return {[type]}       [description]
+	 */
 	return function script (url, type) {
 		if (arguments.length === 2) type = undefined;
 
@@ -25,4 +33,5 @@ exports.script = function (Handlebars) {
 			return new Handlebars.SafeString(makeLink(url));
 		}
 	};
+	/***/
 };

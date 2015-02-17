@@ -1,13 +1,20 @@
 
-/**
- * {{split}}
- * Converts a string such as "foo, bar, baz" to an ES Array of strings.
- * @credit: http://bit.ly/1840DsB
- * @param  {string} str
- * @return {Array}
- */
 exports.split = function (Handlebars) {
-	return function (str, delimiter, options) {
+	/**
+	 * Splits a string into an array.
+	 * May be used inline or as an iterator. Else condition will never evaluate.
+	 *
+	 * @category collections
+	 * @signature {{split input[ delimiter]}}
+	 * @param  {string} input
+	 * @param  {[type]} [delimiter] Defaults to ',' if not provided.
+	 * @return {array<string>}
+	 *
+	 * @signature {{#split input[ delimiter]}}<TEMPLATE>{{/split}}
+	 * @param  {string} input
+	 * @param  {[type]} [delimiter] Defaults to ',' if not provided.
+	 */
+	return function split (input, delimiter, options) {
 		if (arguments.length === 1) {
 			throw new Error('Handlebars Helper "split" needs at least 1 parameter');
 		}
@@ -18,7 +25,7 @@ exports.split = function (Handlebars) {
 			delimiter = undefined;
 		}
 
-		var results = str.split(delimiter);
+		var results = input.split(delimiter);
 
 		if (!options.fn) {
 			return results;
@@ -32,4 +39,5 @@ exports.split = function (Handlebars) {
 			}).join('');
 		}
 	};
+	/***/
 };
