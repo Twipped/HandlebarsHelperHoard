@@ -51,5 +51,10 @@ module.exports = makeTests([
 		template: '{{#isLike a b}}yes{{else}}no{{/isLike}}',
 		input: {a:'2', b:'1'},
 		output: 'no'
+	},
+	{
+		template: '{{#isLike 2 2 "2" 1}}yes{{else}}no{{/isLike}}',
+		input: {},
+		output: 'yes'
 	}
 ]);
