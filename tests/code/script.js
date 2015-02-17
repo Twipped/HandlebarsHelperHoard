@@ -18,5 +18,9 @@ module.exports = makeTests([
 		template: '{{script a}}',
 		input: {a:['/assets/js/fileA.js', '/assets/js/fileB.js']},
 		output: '<script src="/assets/js/fileA.js"></script>\n<script src="/assets/js/fileB.js"></script>'
-	}
+	},
+	{
+		template: '{{script "/assets/js/file.js" "foo"}}',
+		output: '<script type="foo" src="/assets/js/file.js"></script>'
+	},
 ]);

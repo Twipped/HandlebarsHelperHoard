@@ -18,5 +18,9 @@ module.exports = makeTests([
 		template: '{{link a}}',
 		input: {a:['/assets/css/fileA.css', '/assets/css/fileB.css']},
 		output: '<link rel="stylesheet" href="/assets/css/fileA.css">\n<link rel="stylesheet" href="/assets/css/fileB.css">'
+	},
+	{
+		template: '{{link "file.css" "foo" }}',
+		output: '<link rel="foo" href="file.css">'
 	}
 ]);

@@ -1,8 +1,13 @@
 
 exports.script = function (Handlebars) {
-	return function (input) {
-		
+	return function script (url, type) {
+		if (arguments.length === 2) type = undefined;
+
 		function makeLink(src) {
+			if (type) {
+				return new Handlebars.SafeString('<script type="' + type + '" src="' + src + '"></script>');
+			}
+
 			var ext = src.split('.').pop();
 			switch (ext) {
 			case 'js':
@@ -14,11 +19,10 @@ exports.script = function (Handlebars) {
 			}
 		}
 
-		if (Array.isArray(input)) {
-			return new Handlebars.SafeString(input.map(makeLink).join('\n'));
+		if (Array.isArray(url)) {
+			return new Handlebars.SafeString(url.map(makeLink).join('\n'));
 		} else {
-			return new Handlebars.SafeString(makeLink(input));
+			return new Handlebars.SafeString(makeLink(url));
 		}
-
 	};
 };
