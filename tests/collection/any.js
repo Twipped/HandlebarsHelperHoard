@@ -32,6 +32,26 @@ module.exports = makeTests([
 		input: {a:{a:true}},
 		output: 'true'
 	},
+	{
+		template: '{{any a}}',
+		input: {a:[0, []]},
+		output: ''
+	},
+	{
+		template: '{{any a}}',
+		input: {a:[0, [0]]},
+		output: 'true'
+	},
+	{
+		template: '{{any a}}',
+		input: {a:[0, [1]]},
+		output: 'true'
+	},
+	{
+		template: '{{any a}}',
+		input: {a:[[], []]},
+		output: ''
+	},
 
 	{
 		template: '{{#any a }}yes{{else}}no{{/any}}',

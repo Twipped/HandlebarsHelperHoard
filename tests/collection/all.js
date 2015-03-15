@@ -28,6 +28,26 @@ module.exports = makeTests([
 		output: ''
 	},
 	{
+		template: '{{all a b}}',
+		input: {a:[], b: 1},
+		output: ''
+	},
+	{
+		template: '{{all a b}}',
+		input: {a:[1], b: 1},
+		output: 'true'
+	},
+	{
+		template: '{{all a b}}',
+		input: {a:[], b: [1]},
+		output: ''
+	},
+	{
+		template: '{{all a b}}',
+		input: {a:0, b: []},
+		output: ''
+	},
+	{
 		template: '{{all a }}',
 		input: {a:{a:true}},
 		output: 'true'

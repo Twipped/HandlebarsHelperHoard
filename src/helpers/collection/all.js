@@ -1,7 +1,13 @@
 
 exports.all = function () {
+
+	function truthy (value) {
+		if (Array.isArray(value)) return !!value.length;
+		return !!value;
+	}
+
 	/**
-	 * Tests is all of the values in the provided array or object are truthy.
+	 * Tests if all of the values in the provided array or object are truthy.
 	 * May be used inline or as a conditional block.
 	 *
 	 * @category collections
@@ -23,7 +29,7 @@ exports.all = function () {
 			yes = !!input[0];
 			for (i = 1, c = input.length; i < c; i++) {
 				
-				if (!(yes = yes && !!input[i])) break;
+				if (!(yes = yes && truthy(input[i]))) break;
 
 			}
 		} else if (input && typeof input === 'object') {
@@ -31,11 +37,11 @@ exports.all = function () {
 			yes = !!keys[0];
 			for (i = 1, c = keys.length; i < c; i++) {
 
-				if (!(yes = yes && !!input[i])) break;
+				if (!(yes = yes && truthy(input[i]))) break;
 
 			}
 		} else if (input) {
-			yes = !!input;
+			yes = truthy(input[i]);
 		}
 
 		if (!options.fn) return yes || '';

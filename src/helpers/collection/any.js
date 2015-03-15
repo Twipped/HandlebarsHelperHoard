@@ -1,5 +1,11 @@
 
 exports.any = function () {
+
+	function truthy (value) {
+		if (Array.isArray(value)) return !!value.length;
+		return !!value;
+	}
+
 	/**
 	 * Tests if any of the values in the provided array or object are truthy.
 	 * May be used inline or as a conditional block.
@@ -21,7 +27,7 @@ exports.any = function () {
 		var i,c, yes = false;
 		if (Array.isArray(input)) {
 			for (i = 0, c = input.length; i < c; i++) {
-				if (input[i]) {
+				if (truthy(input[i])) {
 					yes = true;
 					break;
 				}
@@ -29,7 +35,7 @@ exports.any = function () {
 		} else if (input && typeof input === 'object') {
 			var keys = Object.keys(input);
 			for (i = 0, c = keys.length; i < c; i++) {
-				if (input[keys[i]]) {
+				if (truthy(input[keys[i]])) {
 					yes = true;
 					break;
 				}
