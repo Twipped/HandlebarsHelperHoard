@@ -11,8 +11,6 @@ exports.before = function (Handlebars) {
 	 * @return {Array} Array excluding the number of items specified
 	 *
 	 * @signature {{#before input[ count]}}<TEMPLATE>[{{else}}<TEMPLATE>]{{/before}}
-	 * @param  {Array}  input Collection
-	 * @param  {Number} [count] Number of items to include
 	 * @example
 	 * // items = ['a','b','c','d','e','f']
 	 * {{#before items 2}}<span>{{this}}</span>{{/before}}

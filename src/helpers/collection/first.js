@@ -11,8 +11,6 @@ exports.first = function (Handlebars) {
 	 * @return {Array} Array excluding the number of items specified
 	 *
 	 * @signature {{#first input[ count]}}<TEMPLATE>[{{else}}<TEMPLATE>]{{/first}}
-	 * @param  {Array}  input Collection
-	 * @param  {Number} [count] Number of items to exclude
 	 * @example
 	 * // items = ['a','b','c','d','e','f']
 	 * {{#first items, 2}}<span>{{this}}</span>{{/first}}

@@ -16,7 +16,6 @@ exports.all = function () {
 	 * @return {boolean}
 	 *
 	 * @signature {{#all input}}<TEMPLATE>[{{else}}<TEMPLATE>]{{/all}}
-	 * @param  {array<mixed>|object<mixed>} input Array whose values must all be truthy, or an object whose properties must all be truthy
 	 * @example
 	 * {{#all flags}}All flags are true.{{else}}Some or none of the flags are true.{{/all}}
 	 */

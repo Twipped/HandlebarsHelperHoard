@@ -11,8 +11,6 @@ exports.inArray = function () {
 	 * @return {boolean}
 	 *
 	 * @signature {{#inArray input value}}<TEMPLATE>[{{else}}<TEMPLATE>]{{/inArray}}
-	 * @param  {array<mixed>} input Array to search
-	 * @param  {mixed} value Value to search for
 	 */
 	return function inArray (input, value, options) {
 		var result = input.indexOf(value) >= 0;

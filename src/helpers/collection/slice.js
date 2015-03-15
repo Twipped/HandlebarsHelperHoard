@@ -12,9 +12,6 @@ exports.slice = function (Handlebars) {
 	 * @return {array}
 	 *
 	 * @signature {{#slice input start[ count]}}<TEMPLATE>[{{else}}<TEMPLATE>]{{/slice}}
-	 * @param  {array<mixed>} input
-	 * @param  {integer} start  Index to slice from
-	 * @param  {integer} [count]  Number of items to slice.
 	 */
 	return function slice (input, start, count, options) {
 		options = arguments[arguments.length - 1];

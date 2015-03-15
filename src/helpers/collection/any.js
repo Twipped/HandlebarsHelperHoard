@@ -16,7 +16,6 @@ exports.any = function () {
 	 * @return {boolean}
 	 *
 	 * @signature {{#any input}}<TEMPLATE>[{{else}}<TEMPLATE>]{{/any}}
-	 * @param  {array<mixed>|object<mixed>} input Array containing any truthy values, or an object with any property that is truthy
 	 * @example
 	 * {{#any flags}}Sore or all flags are true.{{else}}None of the flags are true.{{/any}}
 	 */

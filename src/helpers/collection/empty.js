@@ -10,7 +10,6 @@ exports.empty = function () {
 	 * @return {boolean}
 	 *
 	 * @signature {{#empty input}}<TEMPLATE>[{{else}}<TEMPLATE>]{{/empty}}
-	 * @param  {string|array|object} input
 	 * @example
 	 * // items = ['a']
 	 * {{#empty items}}is empty{{else}}is not empty{{/empty}}

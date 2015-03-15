@@ -11,8 +11,6 @@ exports.sort = function (Handlebars) {
 	 * @return {array}
 	 *
 	 * @signature {{#sort input[ key]}}<TEMPLATE>[{{else}}<TEMPLATE>]{{/sort}}
-	 * @param  {array<mixed>} input
-	 * @param  {string} [key] If the input is an array of objects, pass this argument to indicate what key should be compared.
 	 */
 	return function sort (input, key, options) {
 		if (arguments.length === 1) {

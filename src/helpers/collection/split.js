@@ -11,8 +11,6 @@ exports.split = function (Handlebars) {
 	 * @return {array<string>}
 	 *
 	 * @signature {{#split input[ delimiter]}}<TEMPLATE>{{/split}}
-	 * @param  {string} input
-	 * @param  {[type]} [delimiter] Defaults to ',' if not provided.
 	 */
 	return function split (input, delimiter, options) {
 		if (arguments.length === 1) {

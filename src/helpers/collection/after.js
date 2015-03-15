@@ -11,8 +11,6 @@ exports.after = function (Handlebars) {
 	 * @return {Array} Array excluding the number of items specified
 	 *
 	 * @signature {{#after input[ count]}}<TEMPLATE>[{{else}}<TEMPLATE>]{{/after}}
-	 * @param  {Array}  input Collection
-	 * @param  {Number} [count] Number of items to exclude
 	 * @example
 	 * // items = ['a','b','c','d','e','f']
 	 * {{#after items, 2}}<span>{{this}}</span>{{/after}}

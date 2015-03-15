@@ -9,7 +9,6 @@ exports.notEmpty = function () {
 	 * @return {boolean}
 	 *
 	 * @signature {{#notEmpty input}}<TEMPLATE>[{{else}}<TEMPLATE>]{{/notEmpty}}
-	 * @param  {string|array|object} input
 	 * @example
 	 * // items = ['a']
 	 * {{#notEmpty items}}is not empty{{else}}is empty{{/notEmpty}}

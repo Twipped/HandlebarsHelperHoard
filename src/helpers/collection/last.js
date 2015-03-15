@@ -11,8 +11,6 @@ exports.last = function (Handlebars) {
 	 * @return {Array} Array excluding the number of items specified
 	 *
 	 * @signature {{#last input[ count]}}<TEMPLATE>[{{else}}<TEMPLATE>]{{/last}}
-	 * @param  {Array}  input Collection
-	 * @param  {Number} [count] Number of items to exclude
 	 * @example
 	 * // items = ['a','b','c','d','e','f']
 	 * {{#last items, 2}}<span>{{this}}</span>{{/last}}

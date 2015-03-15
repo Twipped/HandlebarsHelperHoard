@@ -12,8 +12,6 @@ exports.join = function (Handlebars) {
 	 * @return {string}
 	 *
 	 * @signature {{#join items[ separator]}}<TEMPLATE>[{{else}}<TEMPLATE>]{{/join}}
-	 * @param  {array<mixed>} input
-	 * @param  {string} [separator] Defaults to `','`
 	 */
 	return function join (input, separator, options) {
 		if (arguments.length === 1) {
