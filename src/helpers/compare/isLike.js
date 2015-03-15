@@ -1,9 +1,28 @@
 
 exports.isLike = function () {
-	return function (value, test, options) {
+
+	/**
+	 * Tests if the first argument matches any of the other arguments with loose equality.
+	 * @category comparisons
+	 *
+	 * @signature {{isLike value test1 ... testN}}
+	 * @param  {mixed} value Value to check against
+	 * @param  {mixed} ...test Values to test
+	 * @return {mixed} Matched value
+	 *
+	 * @signature {{#isLike value test1 ... testN}}<TEMPLATE>[{{else}}<TEMPLATE>]{{/isLike}}
+	 * @describe Truthy block will evaluate with the result value as the current context ({this}).
+	 */
+	
+	return function isLike (value, test, options) {
+		if (arguments.length < 3) {
+			throw new Error('Handlebars Helper "isLike" needs a minimum of 2 arguments');
+		}
+
 		var args = [].slice.call(arguments);
-		var options = args.pop();
-		var value = args.shift();
+		
+		options = args.pop();
+		value = args.shift();
 
 		var result = false;
 		var i = args.length;
@@ -13,6 +32,8 @@ exports.isLike = function () {
 
 		if (!options.fn) return result || '';
 		
-		return result ? options.fn(this, options) : options.inverse(this, options);
+		return result ? options.fn(this) : options.inverse(this);
 	};
+
+	/***/
 };
