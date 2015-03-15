@@ -8,8 +8,8 @@ module.exports = makeTests([
 		output: '1'
 	},
 	{
-		template: '{{or a b}}',
-		input: {a:0, b:1},
+		template: '{{or a b c}}',
+		input: {a:0, b:1, c:2},
 		output: '1'
 	},
 	{
@@ -26,6 +26,11 @@ module.exports = makeTests([
 		template: '{{or c}}',
 		input: {a:1, b:2, c:0},
 		output: '0'
+	},
+	{
+		template: '{{or a b c}}',
+		input: {a:[], b:[1], c:2},
+		output: '1'
 	},
 	{
 		template: '{{or "<div>"}}',

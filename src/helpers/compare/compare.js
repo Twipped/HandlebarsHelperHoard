@@ -28,7 +28,7 @@ exports.compare = function () {
 		};
 
 		if (!operators[operator]) {
-			throw new Error('Handlebars Helper "compare" doesn\'t know the operator ' + operator);
+			throw new Error('Handlebars Helper "compare" does not know the operator ' + operator);
 		}
 
 		var result = !!operators[operator](left, right);
