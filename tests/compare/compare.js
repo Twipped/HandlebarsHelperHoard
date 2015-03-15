@@ -33,6 +33,11 @@ module.exports = makeTests([
 		output: 'true'
 	},
 	{
+		template: '{{compare a "!typeof" b}}',
+		input: {a:1, b:'number'},
+		output: ''
+	},
+	{
 		template: '{{compare a "%" b}}',
 		input: {a:11, b:2},
 		output: 'true'
@@ -41,6 +46,16 @@ module.exports = makeTests([
 		template: '{{compare a "%" b}}',
 		input: {a:10, b:2},
 		output: ''
+	},
+	{
+		template: '{{compare a "!%" b}}',
+		input: {a:11, b:2},
+		output: ''
+	},
+	{
+		template: '{{compare a "!%" b}}',
+		input: {a:10, b:2},
+		output: 'true'
 	},
 	{
 		template: '{{#compare a b}}content{{/compare}}',
