@@ -1,6 +1,25 @@
 
 exports.date = function () {
-	return function (format, input, options) {
+
+	/**
+	 * Outputs a date formatted using moment notation.
+	 * Depends on the `moment` library. Moment will be searched for by first accessing a `require` function (if present) before checking global contexts.
+	 * @category date
+	 * @name date
+	 *
+	 * @signature {{date format}}
+	 * @describe Outputs the current date/time
+	 * @param  {string} format  Moment formatting
+	 * @return {string}
+	 *
+	 * @signature {{date format input [parse=<string>]}}
+	 * @param  {string} format  Moment formatting
+	 * @param  {string|Date} input   The date value to be formatted. Must be either a Date object, parsable by Date(input), or parsable using a providing parsing string.
+	 * @param {string} [parse] If a `parse` attribute is provided, it will be used for instructing moment on how to parse the input.
+	 * @return {string}
+	 */
+	
+	return function date (format, input, options) {
 		var moment = (typeof require === 'function' && require('moment')) || ((typeof window !== 'undefined' && window) || (typeof global !== 'undefined' && global) || {}).moment;
 		if (!moment) {
 			throw new Error('Handlebars Helper "date" requires that the Moment.js library be loaded before using in a template.');
@@ -32,6 +51,8 @@ exports.date = function () {
 
 		return input.format(format);
 	};
+
+	/***/
 };
 
 exports.date.needs = ['moment'];

@@ -7,7 +7,7 @@ exports.split = function (Handlebars) {
 	 * @category collections
 	 * @signature {{split input[ delimiter]}}
 	 * @param  {string} input
-	 * @param  {[type]} [delimiter] Defaults to ',' if not provided.
+	 * @param  {string} [delimiter] Defaults to ',' if not provided.
 	 * @return {array<string>}
 	 *
 	 * @signature {{#split input[ delimiter]}}<TEMPLATE>{{/split}}

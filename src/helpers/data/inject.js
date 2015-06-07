@@ -1,6 +1,19 @@
 
 exports.inject = function () {
-	return function (options) {
+
+	/**
+	 * Any values passed as named arguments are injected into the handlebars data context, using the name provided for each argument.
+	 * @category data
+	 * @name inject
+	 *
+	 * @signature {{inject key=value [key2=value2] ...}}
+	 * @describe Inserts into the current context.
+	 *
+	 * @signature {{#inject key=value [key2=value2] ...}}<TEMPLATE>{{/inject}}
+	 * @describe Inserts into the context of the tag block.
+	 */
+	
+	return function inject (options) {
 		var context = this;
 
 		options = arguments[arguments.length - 1];
@@ -23,4 +36,6 @@ exports.inject = function () {
 
 		return options.fn && options.fn(context) || '';
 	};
+
+	/***/
 };
